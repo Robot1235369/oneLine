@@ -2,22 +2,20 @@ from os import listdir
 
 dirs = []
 file_names = []
-path = ""
+path = "insert file path here"
 i = 0
 
 print("files onelined:")
 
-contents = listdir()
-
 try:
     while True:
+        contents = listdir(path)
         for content in contents:
             if "." not in content:
                 dirs.append(path + content + "/")
             elif ".java" in content:
                 file_names.append(path + content)
         path = dirs[i]
-        contents = listdir(path)
         i += 1
 except(IndexError):
     pass
