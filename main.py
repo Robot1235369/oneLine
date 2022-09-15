@@ -1,4 +1,6 @@
-file_names = ["enter files here"]
+from os import listdir
+
+
 
 for i in range(len(file_names)):
     file = open(file_names[i], "r")
