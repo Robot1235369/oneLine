@@ -19,8 +19,5 @@ try:
         path = dirs[i]
         contents = listdir(path)
         i += 1
-except():
+except(IndexError):
     pass
-
-print(dirs)
-print(file)

@@ -1,8 +1,30 @@
 from os import listdir
 
+dirs = []
+file_names = []
+path = ""
+i = 0
+
+print("files onelined:")
+
+contents = listdir()
+
+try:
+    while True:
+        for content in contents:
+            if "." not in content:
+                dirs.append(path + content + "/")
+            elif ".java" in content:
+                file_names.append(path + content)
+        path = dirs[i]
+        contents = listdir(path)
+        i += 1
+except(IndexError):
+    pass
 
 
 for i in range(len(file_names)):
+    print(file_names[i])
     file = open(file_names[i], "r")
     lines = file.readlines()
     file.close()
