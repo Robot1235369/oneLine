@@ -1,19 +1,19 @@
-from os import listdir
+import os
 
 dirs = []
 file_names = []
-path = "insert file path here"
+path = "Insert File Path Here"
 i = 0
 
 print("files onelined:")
 
 try:
     while True:
-        contents = listdir(path)
+        contents = os.listdir(path)
         for content in contents:
-            if "." not in content:
+            if os.path.splitext(content)[1] == '':
                 dirs.append(path + content + "/")
-            elif ".java" in content:
+            elif os.path.splitext(content)[1] == '.java':
                 file_names.append(path + content)
         path = dirs[i]
         i += 1
